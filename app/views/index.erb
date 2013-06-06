@@ -1,6 +1,7 @@
 <div class="container">
   <h1>Welcome to Dummy Users!</h1>
   
+  
   <form action="/login" method="post">
       <b>Email:</b></br>
       <input name="email" placeholder="type email"></br></br>
@@ -9,9 +10,11 @@
       <input type="submit" value="Log In">
   </form>
   </br></br>
-  Don't have an account? Please sign up:
-  <form action="/user/register"  method="get">
-    <input type="submit" value="Sign Up">
-  </form>
 
+  <% unless current_user %>
+    Don't have an account? Please sign up:
+    <form action="/user/register"  method="get">
+      <input type="submit" value="Sign Up">
+    </form>
+  <% end %>
 </div>
