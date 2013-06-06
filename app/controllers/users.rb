@@ -14,7 +14,7 @@ end
 
 post '/users' do
     @user = User.new(params[:usermodel])
-    if @user.valid?
+    if @user.valid? #password digest creation in user model
       @user.save
       session[:user_id] = @user.id
       redirect "/user/#{@user.id}"
