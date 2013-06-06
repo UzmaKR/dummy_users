@@ -1,21 +1,6 @@
 <div class="container">
-
-  <% if @url && @url.errors.any? %>
-      <b>Error! <%= @url.errors.full_messages %> </b>
-  <% elsif @url %>
-    <%=@url.short_url %>
-  <% end %>
-
-  <h1>Type in regular URL and get a short URL!</h1>
-
-    <form action="/urls"  method="post">
-      <input name="url" placeholder="Type a regular url">
-      <input type="submit" value="Submit">
-    </form>
-
-</div>
-
-<div class="container">
+  <h1>Welcome to Dummy Users!</h1>
+  
   
   <form action="/login" method="post">
       <b>Email:</b></br>

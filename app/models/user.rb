@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :password_digest, :confirmation => true
+  has_many :urls
 
   def self.authenticate(email,password_digest)
     user = User.find_by_email(email)

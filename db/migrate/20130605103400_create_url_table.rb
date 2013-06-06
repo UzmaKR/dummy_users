@@ -6,6 +6,4 @@ class CreateUrlTable < ActiveRecord::Migration
       t.integer :click_counter
     end
   end
-
-
 end
