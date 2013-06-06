@@ -4,13 +4,14 @@ class User < ActiveRecord::Base
   validates_length_of :last_name, minimum: 3, maximum: 20
   validates_uniqueness_of :email
   validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :password_digest, :confirmation => true
 
   def self.authenticate(email,password_digest)
-      user = User.find_by_email(email)
+    user = User.find_by_email(email)
       if user && (user.password_digest == password_digest)
         return user
       else
         return nil
-      end
+    end
   end
 end

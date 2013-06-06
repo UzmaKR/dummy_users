@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Register! Register!</h1>
+  
+  <% if @user && @user.errors.any? %>
+      <b>Error! <%= @user.errors.full_messages %> </b>
+  <% end %>
+
+  <form action="/users" method="post" value="usermodel">
+      <b>First Name:</b></br>
+      <input name="usermodel[first_name]" placeholder="type first name"></br></br>
+      <b>Last Name:</b></br>
+      <input name="usermodel[last_name]" placeholder="type last name"></br></br>
+      <b>Email:</b></br>
+      <input name="usermodel[email]" placeholder="type email"></br></br>
+      <b>Password:</b></br>
+      <input name="usermodel[password_digest]" placeholder="type password"></br></br>
+      <b>Password Confirmation:</b></br>
+      <input name="password_digest_confirmation" placeholder="retype password"></br></br>
+      <input type="submit" value="Create New Account">
+  </form>
+
+</div>
